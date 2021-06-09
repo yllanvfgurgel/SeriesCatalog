@@ -12,11 +12,13 @@ namespace SeriesCatalog.Models
             this.Descricao = descricao;
             this.Ano = ano;
             this.Id = id;
+            this.Ativo = true;
         }
         public Genero Genero { get; private set; }
         public string Titulo { get; private set; }
         public string Descricao { get; private set; }
         public int Ano { get; private set; }
+        public bool Ativo { get; private set; }
 
         public override string ToString()
         {
@@ -27,6 +29,10 @@ namespace SeriesCatalog.Models
             retorno += "Ano: " + this.Ano;
 
             return retorno;
+        }
+
+        public void Excluir() {
+            this.Ativo = false;
         }
     }
 }
